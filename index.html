@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#work">Work</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="about" class="hero">
+            <h1>Hello, I'm [Your Name]</h1>
+            <p>Front-end Developer | UI/UX Enthusiast</p>
+        </section>
+
+        <section id="work">
+            <h2>My Work</h2>
+            <div class="work-container">
+                <div class="work-item">
+                    <h3>Website Redesign</h3>
+                    <p>Revamped an e-commerce site with modern UI and improved UX.</p>
+                    <a href="#" class="btn">See More</a>
+                </div>
+                <div class="work-item">
+                    <h3>Mobile App</h3>
+                    <p>Built a task management app with React Native.</p>
+                    <a href="#" class="btn">See More</a>
+                </div>
+                <div class="work-item">
+                    <h3>Portfolio Template</h3>
+                    <p>Created a reusable template for creatives.</p>
+                    <a href="#" class="btn">See More</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Get in Touch</h2>
+            <form class="contact-form" onsubmit="return sendMessage(event)">
+                <input type="text" placeholder="Name" required>
+                <input type="email" placeholder="Email" required>
+                <textarea placeholder="Message" rows="4" required></textarea>
+                <button type="submit" class="btn">Send</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 [Your Name] | Built with Passion</p>
+    </footer>
+
+    <script>
+        function sendMessage(event) {
+            event.preventDefault();
+            alert('Message sent! I’ll respond soon.');
+            event.target.reset();
+            return false;
+        }
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
